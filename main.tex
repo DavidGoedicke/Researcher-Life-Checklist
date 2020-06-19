@@ -1,0 +1,52 @@
+\documentclass[14pt, a5paper]{extarticle}
+%\usepackage[landscape]{geometry}
+\usepackage{hyperref}
+%\usepackage{pgfpages} % Uncomment this to make double page a4 (page numbering gets messed up).
+%\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm,landscape]
+
+\input{style}
+\usepackage[utf8]{inputenc}
+
+\title{PhD check list}
+%\author{da.goedicke Goedicke}
+%\date{June 2020}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+    In this document we collected a variety of aspects to not forget to do when you are a PhD. Its About writing grants, running studies, writing papers, writing grants, and taking care of yourself. Look at the template on page:~\pageref{sec:template} and add more.
+\end{abstract}
+\tableofcontents
+\centering
+\newpage
+
+\input{chapters/Life}
+\input{chapters/RunningExperiments}
+\input{chapters/development}
+
+
+
+
+
+
+\section{Template} \label{sec:template}
+\phantomsection
+\begin{checklist}{Template}
+  \item{Prepare one }{2 Aspects} 
+  \item{Consent form}{printed}
+  \item{Main Activity is the blue line}{10 Minutes}
+  \sepbar{blue}
+  \item{Post Activity node}{}
+  \item{Post experiment Questionnaire}{}
+  \step{Q1}
+  \step{Q2}
+  \step{Q3}
+  \item{Store Experiment Data}{}
+\end{checklist}
+
+\bibliography{bib.bib}
+\bibliographystyle{acm}
+
+
+\end{document}
