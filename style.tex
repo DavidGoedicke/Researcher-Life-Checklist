@@ -9,19 +9,112 @@
 \usepackage{color,soul}
 \usepackage{hhline}
 \usepackage{xhfill}
-
+\usepackage{tgadventor}
 \pagestyle{fancy}
 \fancyhead{}
+
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
-
-
+\usepackage{lastpage}
 \usepackage{titlesec}
+\usepackage{qrcode}
+\usepackage{wrapfig}
+\usepackage{biblatex}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{makecell}
+
+\DeclareBibliographyDriver{misc}{%
+    \iffieldundef{url}{%
+        \usebibmacro{bibindex}%
+        \usebibmacro{begentry}%
+        \usebibmacro{author/editor+others/translator+others}%
+        \setunit{\labelnamepunct}\newblock
+        \usebibmacro{title}%
+        \newunit
+        \printlist{language}%
+        \newunit\newblock
+        \usebibmacro{byauthor}%
+        \newunit\newblock
+        \usebibmacro{byeditor+others}%
+        \newunit\newblock
+        \printfield{howpublished}%
+        \newunit\newblock
+        \printfield{type}%
+        \newunit
+        \printfield{version}%
+        \newunit
+        \printfield{note}%
+        \newunit\newblock
+        \usebibmacro{organization+location+date}%
+        \newunit\newblock
+        \usebibmacro{doi+eprint+url}%
+        \newunit\newblock
+        \usebibmacro{addendum+pubstate}%
+        \setunit{\bibpagerefpunct}\newblock
+        \usebibmacro{pageref}%
+        \newunit\newblock
+        \iftoggle{bbx:related}
+        {\usebibmacro{related:init}%
+            \usebibmacro{related}}
+        {}%
+        \usebibmacro{finentry}
+    }{%
+    \begin{tabular}{m{0.75\linewidth} m{0.2\linewidth}}
+         \parbox[t][2.5cm]{\linewidth}{%
+            \usebibmacro{bibindex}%
+            \usebibmacro{begentry}% 
+            \usebibmacro{author/editor+others/translator+others}%
+            \setunit{\labelnamepunct}\newblock
+            \usebibmacro{title}%
+            \newunit
+            \printlist{language}%
+            \newunit\newblock
+            \usebibmacro{byauthor}%
+            \newunit\newblock
+            \usebibmacro{byeditor+others}%
+            \newunit\newblock
+            \printfield{howpublished}%
+            \newunit\newblock
+            \printfield{type}%
+            \newunit
+            \printfield{version}%
+            \newunit
+            \printfield{note}%
+            \newunit\newblock
+            \usebibmacro{organization+location+date}%
+            \newunit\newblock
+            \small{\usebibmacro{doi+eprint+url}}%
+            \newunit\newblock
+            \usebibmacro{addendum+pubstate}%
+            \setunit{\bibpagerefpunct}\newblock
+            \usebibmacro{pageref}%
+            \newunit\newblock
+            \iftoggle{bbx:related}
+            {\usebibmacro{related:init}%
+                \usebibmacro{related}}
+            {}%
+            \usebibmacro{finentry}
+        } &  {\qrcode[height=\linewidth]{\strfield{url}}}\\
+         
+    \end{tabular}
+    \vspace{0.25cm}
+     
+    }
+}
+
+
+
 
 \titleformat*{\section}{\fontfamily{qag}\selectfont\large\centering\bfseries\MakeUppercase}
 \titleformat*{\subsection}{\fontfamily{qag}\selectfont\centering\bfseries\MakeUppercase}
+
+
+
+
+
+
 % creates empty checkboxes to be used as the second
 % argument to \item on checklist
 \newcommand{\checkbox}{\makebox[3ex][r]{\Large{$\square$}}}
@@ -44,7 +137,7 @@
 \newenvironment{checklist}[1]{%
 
   \renewcommand{\item}[2]{%
-    ##1\hspace{0.1em}\dotfill\makebox{\small\uppercase{##2}}\\
+    ##1\hspace{0.1em}\dotfill\makebox{\small ##2 }\\
     
   }
   \newcommand{\step}[1]{%

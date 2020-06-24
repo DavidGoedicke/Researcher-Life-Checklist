@@ -1,8 +1,9 @@
 \documentclass[14pt, a5paper]{extarticle}
-\usepackage{tgbonum}
+
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
-\usepackage{tgadventor}
+
+
 
 \input{style}
 
@@ -10,9 +11,9 @@
 %\author{da.goedicke Goedicke}
 %\date{June 2020}
 \date{}
-
+\addbibresource{bib.bib}
 \begin{document}
-\fontfamily{qag}\selectfont
+\fontfamily{qag}\selectfont\pagenumbering{arabic}
 \maketitle
 \begin{abstract}
     In this document we collected a variety of aspects to not forget to do when you are a PhD. Its About writing grants, running studies, writing papers, writing grants, and taking care of yourself. Duplicate the template.tex and add more.
@@ -31,9 +32,10 @@
 
 
 
+\printbibliography
 
-\bibliography{bib.bib}
-\bibliographystyle{acm}
+\input{chapters/Appendix}
+
 
 
 \end{document}
